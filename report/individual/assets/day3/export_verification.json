@@ -1,0 +1,124 @@
+{
+  "reference_used": false,
+  "scores_computed": false,
+  "tasks": [
+    {
+      "task": "easy_semantic",
+      "images": [
+        "7ee6d192-89e2408b.jpg",
+        "817bca71-00000000.jpg",
+        "81ae7cbb-6bc63a4a.jpg"
+      ],
+      "format": "Segmentation mask 1.1",
+      "mask_count": 13,
+      "sha256": "f47e14575654045d20ff161d641c72c43b775d307e1b384c012e914f8edb0ae0",
+      "decoded_masks_match_cvat": true,
+      "overlap_pixels": 0,
+      "cvat_job_url": "http://localhost:8080/tasks/7/jobs/7"
+    },
+    {
+      "task": "medium_instance",
+      "images": [
+        "000000181542.jpg",
+        "000000373353.jpg",
+        "000000458325.jpg"
+      ],
+      "format": "COCO 1.0",
+      "mask_count": 56,
+      "sha256": "662365692c6ee6cd4f4c6004c425fd3d81e4660f40712bfd1f77a237d9748d9a",
+      "decoded_masks_match_cvat": true,
+      "overlap_pixels": 0,
+      "cvat_job_url": "http://localhost:8080/tasks/6/jobs/6"
+    },
+    {
+      "task": "hard_panoptic",
+      "images": [
+        "000000350023.jpg",
+        "000000460147.jpg"
+      ],
+      "format": "COCO 1.0",
+      "mask_count": 58,
+      "sha256": "a3cc6aa6ec2d3f7f8015afe8dd361f471ae9859f7e55ccd4b69efa20fed61af6",
+      "decoded_masks_match_cvat": true,
+      "overlap_pixels": 0,
+      "cvat_job_url": "http://localhost:8080/tasks/8/jobs/8"
+    },
+    {
+      "task": "cp1_holes",
+      "images": [
+        "000000144300.jpg"
+      ],
+      "format": "COCO 1.0",
+      "mask_count": 6,
+      "sha256": "718a70e90cf0541b62422c6b7987026cbd5cd7e660a21c0597130908dd87163d",
+      "decoded_masks_match_cvat": true,
+      "overlap_pixels": 0,
+      "cvat_job_url": "http://localhost:8080/tasks/9/jobs/9"
+    },
+    {
+      "task": "cp2_slice",
+      "images": [
+        "000000017627.jpg"
+      ],
+      "format": "COCO 1.0",
+      "mask_count": 15,
+      "sha256": "244d80e2911364a0d98ffcb66cf5069177103ce90af50f4db7fd02954095655a",
+      "decoded_masks_match_cvat": true,
+      "overlap_pixels": 0,
+      "cvat_job_url": "http://localhost:8080/tasks/10/jobs/10"
+    },
+    {
+      "task": "cp5_occlusion",
+      "images": [
+        "000000336232.jpg"
+      ],
+      "format": "COCO 1.0",
+      "mask_count": 33,
+      "sha256": "bbe876913e57807f21b663ddefd31769f0567f46e9da2f5069ed70b4245b2e31",
+      "decoded_masks_match_cvat": true,
+      "overlap_pixels": 0,
+      "cvat_job_url": "http://localhost:8080/tasks/11/jobs/11"
+    },
+    {
+      "task": "cp3_thin",
+      "images": [
+        "839f7736-abe28069.jpg"
+      ],
+      "format": "Segmentation mask 1.1",
+      "mask_count": 4,
+      "sha256": "6069c283422438710c4e6dd16611784a6101b788938fce74598aa950be8ade2f",
+      "decoded_masks_match_cvat": true,
+      "overlap_pixels": 0,
+      "cvat_job_url": "http://localhost:8080/tasks/12/jobs/12"
+    },
+    {
+      "task": "cp4_curb",
+      "images": [
+        "7d83710e-4697c3b2.jpg"
+      ],
+      "format": "Segmentation mask 1.1",
+      "mask_count": 2,
+      "sha256": "6577f6b2e3cd5a242b4acd6494ccbc0b4664d07ab14642c4e7db05fc9a816680",
+      "decoded_masks_match_cvat": true,
+      "overlap_pixels": 0,
+      "cvat_job_url": "http://localhost:8080/tasks/13/jobs/13"
+    },
+    {
+      "task": "cp6_coverage",
+      "images": [
+        "7daa6479-67988f3f.jpg"
+      ],
+      "format": "Segmentation mask 1.1",
+      "mask_count": 5,
+      "sha256": "053b30c34772a7c222903a83c0b4fbb1ab7506c607dd0f61189613f924de5ee5",
+      "decoded_masks_match_cvat": true,
+      "overlap_pixels": 0,
+      "cvat_job_url": "http://localhost:8080/tasks/14/jobs/14"
+    }
+  ],
+  "student_medium_boundary_review": "student said still unsure; original mask preserved",
+  "student_medium_original_preserved": true,
+  "original_images_unchanged": true,
+  "total_images": 14,
+  "total_masks": 192
+}

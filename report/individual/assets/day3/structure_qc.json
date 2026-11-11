@@ -1,0 +1,220 @@
+{
+  "tasks": [
+    {
+      "task": "easy_semantic",
+      "type": "semantic",
+      "file": "submissions/easy_semantic.zip",
+      "errors": [],
+      "warnings": [],
+      "details": {
+        "mask_images": [
+          "7ee6d192-89e2408b.jpg",
+          "817bca71-00000000.jpg",
+          "81ae7cbb-6bc63a4a.jpg"
+        ],
+        "labelmap_classes": [
+          "background",
+          "building",
+          "road",
+          "sidewalk",
+          "sky",
+          "vegetation"
+        ]
+      }
+    },
+    {
+      "task": "medium_instance",
+      "type": "instance",
+      "file": "submissions/medium_instance.zip",
+      "errors": [],
+      "warnings": [],
+      "details": {
+        "images": [
+          "000000181542.jpg",
+          "000000373353.jpg",
+          "000000458325.jpg"
+        ],
+        "annotation_count": 56,
+        "segmentation_kinds": {
+          "RLE": 56
+        },
+        "counts_by_image_class": {
+          "000000181542.jpg / bus": 1,
+          "000000181542.jpg / car": 3,
+          "000000181542.jpg / motorcycle": 5,
+          "000000181542.jpg / person": 8,
+          "000000373353.jpg / bus": 1,
+          "000000373353.jpg / car": 14,
+          "000000373353.jpg / person": 5,
+          "000000458325.jpg / car": 12,
+          "000000458325.jpg / person": 7
+        }
+      }
+    },
+    {
+      "task": "hard_panoptic",
+      "type": "panoptic",
+      "file": "submissions/hard_panoptic.zip",
+      "errors": [],
+      "warnings": [
+        "COCO 1.0 chỉ xác nhận các mask; hãy kiểm trực quan chồng lấn và phủ vùng panoptic trong CVAT"
+      ],
+      "details": {
+        "images": [
+          "000000350023.jpg",
+          "000000460147.jpg"
+        ],
+        "annotation_count": 58,
+        "segmentation_kinds": {
+          "RLE": 58
+        },
+        "counts_by_image_class": {
+          "000000350023.jpg / building": 1,
+          "000000350023.jpg / bus": 1,
+          "000000350023.jpg / car": 20,
+          "000000350023.jpg / motorcycle": 1,
+          "000000350023.jpg / person": 1,
+          "000000350023.jpg / road": 1,
+          "000000350023.jpg / sidewalk": 1,
+          "000000350023.jpg / sky": 1,
+          "000000350023.jpg / traffic light": 3,
+          "000000350023.jpg / vegetation": 1,
+          "000000460147.jpg / building": 1,
+          "000000460147.jpg / car": 20,
+          "000000460147.jpg / road": 1,
+          "000000460147.jpg / sidewalk": 1,
+          "000000460147.jpg / sky": 1,
+          "000000460147.jpg / truck": 2,
+          "000000460147.jpg / vegetation": 1
+        }
+      }
+    },
+    {
+      "task": "cp1_holes",
+      "type": "instance",
+      "file": "submissions/cp1_holes.zip",
+      "errors": [],
+      "warnings": [],
+      "details": {
+        "images": [
+          "000000144300.jpg"
+        ],
+        "annotation_count": 6,
+        "segmentation_kinds": {
+          "RLE": 6
+        },
+        "counts_by_image_class": {
+          "000000144300.jpg / bus": 2,
+          "000000144300.jpg / motorcycle": 1,
+          "000000144300.jpg / person": 2,
+          "000000144300.jpg / truck": 1
+        }
+      }
+    },
+    {
+      "task": "cp2_slice",
+      "type": "instance",
+      "file": "submissions/cp2_slice.zip",
+      "errors": [],
+      "warnings": [],
+      "details": {
+        "images": [
+          "000000017627.jpg"
+        ],
+        "annotation_count": 15,
+        "segmentation_kinds": {
+          "RLE": 15
+        },
+        "counts_by_image_class": {
+          "000000017627.jpg / bus": 2,
+          "000000017627.jpg / car": 11,
+          "000000017627.jpg / person": 2
+        }
+      }
+    },
+    {
+      "task": "cp5_occlusion",
+      "type": "instance",
+      "file": "submissions/cp5_occlusion.zip",
+      "errors": [],
+      "warnings": [],
+      "details": {
+        "images": [
+          "000000336232.jpg"
+        ],
+        "annotation_count": 33,
+        "segmentation_kinds": {
+          "RLE": 33
+        },
+        "counts_by_image_class": {
+          "000000336232.jpg / bus": 1,
+          "000000336232.jpg / car": 23,
+          "000000336232.jpg / motorcycle": 2,
+          "000000336232.jpg / person": 4,
+          "000000336232.jpg / truck": 3
+        }
+      }
+    },
+    {
+      "task": "cp3_thin",
+      "type": "semantic",
+      "file": "submissions/cp3_thin.zip",
+      "errors": [],
+      "warnings": [],
+      "details": {
+        "mask_images": [
+          "839f7736-abe28069.jpg"
+        ],
+        "labelmap_classes": [
+          "background",
+          "pole",
+          "road",
+          "sky",
+          "traffic sign"
+        ]
+      }
+    },
+    {
+      "task": "cp4_curb",
+      "type": "semantic",
+      "file": "submissions/cp4_curb.zip",
+      "errors": [],
+      "warnings": [],
+      "details": {
+        "mask_images": [
+          "7d83710e-4697c3b2.jpg"
+        ],
+        "labelmap_classes": [
+          "background",
+          "road",
+          "sidewalk"
+        ]
+      }
+    },
+    {
+      "task": "cp6_coverage",
+      "type": "semantic",
+      "file": "submissions/cp6_coverage.zip",
+      "errors": [],
+      "warnings": [],
+      "details": {
+        "mask_images": [
+          "7daa6479-67988f3f.jpg"
+        ],
+        "labelmap_classes": [
+          "background",
+          "building",
+          "car",
+          "person",
+          "road",
+          "sidewalk",
+          "sky",
+          "vegetation"
+        ]
+      }
+    }
+  ],
+  "unknown_zips": [],
+  "error_count": 0,
+  "missing_count": 0
+}
