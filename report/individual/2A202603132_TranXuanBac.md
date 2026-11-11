@@ -2,7 +2,9 @@
 
 - Mã học viên / MSSV: **2A202603132** — lớp **L2A**.
 - Ngày thực hành: **11/11/2026**. CVAT local: `http://localhost:8080`.
-- Công cụ: CVAT, Python, Mask2Former và Codex. Easy có sẵn và person đầu tiên của Medium được tự vẽ; công cụ hỗ trợ gợi ý, sửa các mask còn lại, rà ảnh và kiểm tra export. Sau vòng hỗ trợ, tôi đã tự rà toàn bộ 14 ảnh, sửa các điểm cần điều chỉnh và kiểm chứng lại kết quả.
+- Phần tự vẽ: tôi vẽ tay ở hai task **Easy và Medium** trên CVAT. Object person đầu tiên của Medium được tự vẽ trước khi đưa gợi ý vào task.
+- Công cụ: CVAT, Python, Mask2Former và Codex. Trong vòng hoàn thiện sau đó, công cụ hỗ trợ tạo gợi ý, bổ sung và sửa mask, rà ảnh và kiểm tra export; phần hỗ trợ này được phân biệt với phần tôi tự vẽ tay.
+- Tự kiểm: sau vòng hỗ trợ, tôi đã tự rà toàn bộ 14 ảnh, sửa các điểm cần điều chỉnh và kiểm chứng lại kết quả.
 - Nguồn mô hình gợi ý: [facebook/mask2former-swin-tiny-coco-panoptic](https://huggingface.co/facebook/mask2former-swin-tiny-coco-panoptic). Không dùng reference để tạo hoặc sửa mask; chưa có điểm tự đánh giá.
 
 ## 1. Bài đã nộp
