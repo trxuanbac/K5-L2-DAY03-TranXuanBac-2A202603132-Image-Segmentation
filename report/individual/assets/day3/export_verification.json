@@ -116,9 +116,17 @@
       "cvat_job_url": "http://localhost:8080/tasks/14/jobs/14"
     }
   ],
-  "student_medium_boundary_review": "student said still unsure; original mask preserved",
+  "student_medium_boundary_review": "Student subsequently confirmed completing personal review, corrections and verification.",
   "student_medium_original_preserved": true,
   "original_images_unchanged": true,
   "total_images": 14,
-  "total_masks": 192
+  "total_masks": 192,
+  "student_medium_boundary_review_at_export": "student said still unsure; original mask preserved",
+  "student_self_review": {
+    "confirmed_by": "student in conversation",
+    "date": "2026-11-11",
+    "scope": "all 14 images",
+    "cvat_saved_masks_changed_since_export": false,
+    "basis": "student confirmation; not independent observation of the review process"
+  }
 }
