@@ -2,7 +2,7 @@
 
 **Bài cá nhân: Trần Xuân Bắc · 2A202603132 · L2A.**
 [Báo cáo Day03](report/individual/2A202603132_TranXuanBac.md) · [9 ZIP CVAT](submissions/) · [Kết quả kiểm export](report/individual/assets/day3/export_verification.json).
-Bộ export có 14 ảnh; checker cấu trúc đạt 9/9. Học viên đã xác nhận tự rà, sửa và kiểm chứng toàn bộ 14 ảnh; các ca cân nhắc và công cụ đã dùng được ghi trong báo cáo. Nộp link repo trên LMS là bước riêng.
+Bộ export có 14 ảnh; checker cấu trúc đạt 9/9. Học viên đã xác nhận tự QC bản trước rework. Medium vừa được sửa có hỗ trợ sau khi đối chiếu reference: 13,0/32, tổng ba tier 34,1/82; bản mới cần học viên rà lại. Chi tiết trước/sau và công cụ đã dùng được ghi trong báo cáo. Nộp link repo trên LMS là bước riêng.
 
 
 

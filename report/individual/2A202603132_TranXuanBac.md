@@ -5,7 +5,7 @@
 - Phần tự vẽ: tôi vẽ tay ở hai task **Easy và Medium** trên CVAT. Object person đầu tiên của Medium được tự vẽ trước khi đưa gợi ý vào task.
 - Công cụ: CVAT, Python, Mask2Former và Codex. Trong vòng hoàn thiện sau đó, công cụ hỗ trợ tạo gợi ý, bổ sung và sửa mask, rà ảnh và kiểm tra export; phần hỗ trợ này được phân biệt với phần tôi tự vẽ tay.
 - Tự kiểm: sau vòng hỗ trợ, tôi đã tự rà toàn bộ 14 ảnh, sửa các điểm cần điều chỉnh và kiểm chứng lại kết quả.
-- Nguồn mô hình gợi ý: [facebook/mask2former-swin-tiny-coco-panoptic](https://huggingface.co/facebook/mask2former-swin-tiny-coco-panoptic). Không dùng reference để tạo hoặc sửa mask. Đã dùng gói ground truth coach phát để chấm lần đầu ngày **12/11/2026**, sau khi lưu bản nhãn trên GitHub.
+- Nguồn mô hình gợi ý: [facebook/mask2former-swin-tiny-coco-panoptic](https://huggingface.co/facebook/mask2former-swin-tiny-coco-panoptic). Bản nhãn ban đầu được tạo trước khi xem reference. Vòng rework Medium sau đó có dùng reference để xác định lỗi, rồi sửa theo ảnh gốc với hỗ trợ của Codex. Đã dùng gói ground truth coach phát để chấm lần đầu ngày **12/11/2026**, sau khi lưu bản nhãn trên GitHub.
 
 ## 1. Bài đã nộp
 
@@ -66,7 +66,22 @@ Nhận xét từ chỉ số, cần đối chiếu ảnh khi rework:
 - **Medium:** mean matched IoU **0,735**, recall khoảng **0,61**; TP **43**, FP **13**, FN **28**. Bản nộp có **56** instance, reference có **71**. Các số này cho thấy nhiều vật chưa ghép khớp; cần kiểm cả thiếu vật, sai class và biên, không kết luận mọi FN đều là vật chưa vẽ. [Chi tiết](../../reports/tiers/medium_instance.json)
 - **Hard:** PQ **0,303**, SQ **0,455**, RQ **0,387**. Person, motorcycle, sidewalk, truck và bicycle có PQ bằng 0; cần mở lại đúng ảnh để xác định lỗi class, biên hoặc số instance. [Chi tiết](../../reports/tiers/hard_panoptic.json)
 
-Lần chạy này chỉ chấm bộ ZIP đã lưu, chưa sửa nhãn theo reference và chưa có kết quả sau rework. Gói coach gửi có thư mục `tiers/` kèm ảnh/schema và metadata macOS; đã kiểm tám ảnh khớp dữ liệu bài, giữ nguyên byte của bảy file ground truth và chỉ chuẩn hóa đường dẫn thành `data/tiers/` để cài bằng script có sẵn. Không sửa scorer, schema bài hoặc nội dung ground truth.
+Lần chấm đầu chỉ đánh giá bộ ZIP đã lưu. Kết quả rework sau đó được ghi riêng dưới đây. Gói coach gửi có thư mục `tiers/` kèm ảnh/schema và metadata macOS; đã kiểm tám ảnh khớp dữ liệu bài, giữ nguyên byte của bảy file ground truth và chỉ chuẩn hóa đường dẫn thành `data/tiers/` để cài bằng script có sẵn. Không sửa scorer, schema bài hoặc nội dung ground truth.
+
+**Rework Medium có hỗ trợ ngày 12/11/2026:**
+
+Sau lần tự sửa của học viên đạt 4,9/32, Codex đối chiếu lỗi với reference và chỉnh mask theo ảnh gốc: đổi xe bán tải từ car sang truck, tách nhóm người bị gộp, chỉnh người quàng khăn đỏ, bổ sung người bị che và các người nhỏ phía xa. Đã cập nhật 12 mask, bỏ 1 mask thừa, thêm 9 instance; bản xuất mới có 66 mask. Mask người phụ nữ tự vẽ ở ảnh đen trắng được giữ nguyên. Không sao chép mask reference vào bài nộp và không sửa ground truth hoặc scorer.
+
+| Chỉ số Medium | Trước vòng hỗ trợ này | Sau vòng hỗ trợ này |
+| --- | ---: | ---: |
+| Điểm /32 | 4,9 | 13,0 |
+| TP / FP / FN | 45 / 13 / 26 | 57 / 9 / 14 |
+| Recall@0.5 | 0,634 | 0,803 |
+| Mean matched IoU | 0,741 | 0,726 |
+
+Điểm ba tier hiện tại: **34,1/82** (Easy 14,2; Medium 13,0; Hard 6,9). Đây không phải điểm chính thức /100. Bản trước vòng hỗ trợ: [medium_instance.json](../../reports/tiers/before_medium_rework/medium_instance.json); bản mới: [medium_instance.json](../../reports/tiers/medium_instance.json) và [SCORECARD.md](../../reports/tiers/SCORECARD.md).
+
+ZIP mới đã được kiểm cấu trúc và đối chiếu pixel với mask đã Save trong CVAT. Vẫn còn 14 FN và 9 FP; chưa kết luận hết lỗi. Xác nhận tự QC trước đó thuộc bản trước vòng sửa này; học viên chưa xác nhận đã tự rà lại bản rework mới.
 
 ![CP3: gợi ý ban đầu ở trên, sau sửa ở dưới](assets/day3/cp3_before_after.jpg)
 

@@ -34,20 +34,21 @@
           "000000373353.jpg",
           "000000458325.jpg"
         ],
-        "annotation_count": 56,
+        "annotation_count": 66,
         "segmentation_kinds": {
-          "RLE": 56
+          "RLE": 66
         },
         "counts_by_image_class": {
           "000000181542.jpg / bus": 1,
-          "000000181542.jpg / car": 3,
+          "000000181542.jpg / car": 2,
           "000000181542.jpg / motorcycle": 5,
           "000000181542.jpg / person": 8,
+          "000000181542.jpg / truck": 1,
           "000000373353.jpg / bus": 1,
           "000000373353.jpg / car": 14,
-          "000000373353.jpg / person": 5,
-          "000000458325.jpg / car": 12,
-          "000000458325.jpg / person": 7
+          "000000373353.jpg / person": 12,
+          "000000458325.jpg / car": 13,
+          "000000458325.jpg / person": 9
         }
       }
     },

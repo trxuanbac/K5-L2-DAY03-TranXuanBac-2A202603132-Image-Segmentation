@@ -1,6 +1,6 @@
 {
-  "reference_used": false,
-  "scores_computed": false,
+  "reference_used": true,
+  "scores_computed": true,
   "tasks": [
     {
       "task": "easy_semantic",
@@ -24,11 +24,11 @@
         "000000458325.jpg"
       ],
       "format": "COCO 1.0",
-      "mask_count": 56,
-      "sha256": "662365692c6ee6cd4f4c6004c425fd3d81e4660f40712bfd1f77a237d9748d9a",
+      "mask_count": 66,
+      "sha256": "4cc1ec958109b6aa55e2b8745c8c3b9fd274b1b9a29b3c4fc3cee7e2e22e0d14",
       "decoded_masks_match_cvat": true,
-      "overlap_pixels": 0,
-      "cvat_job_url": "http://localhost:8080/tasks/6/jobs/6"
+      "cvat_job_url": "http://localhost:8080/tasks/6/jobs/6",
+      "verification_note": "Re-export after assisted rework; pixel equality checked. Pre-existing overlaps may remain."
     },
     {
       "task": "hard_panoptic",
@@ -120,7 +120,7 @@
   "student_medium_original_preserved": true,
   "original_images_unchanged": true,
   "total_images": 14,
-  "total_masks": 192,
+  "total_masks": 202,
   "student_medium_boundary_review_at_export": "student said still unsure; original mask preserved",
   "student_self_review": {
     "confirmed_by": "student in conversation",
@@ -128,5 +128,12 @@
     "scope": "all 14 images",
     "cvat_saved_masks_changed_since_export": false,
     "basis": "student confirmation; not independent observation of the review process"
+  },
+  "latest_rework": {
+    "task": "medium_instance",
+    "date": "2026-11-12",
+    "assisted": true,
+    "reference_used_for_diagnosis": true,
+    "student_review_of_latest_rework": "not yet confirmed"
   }
 }
