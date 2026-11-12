@@ -5,7 +5,7 @@
 - Phần tự vẽ: tôi vẽ tay ở hai task **Easy và Medium** trên CVAT. Object person đầu tiên của Medium được tự vẽ trước khi đưa gợi ý vào task.
 - Công cụ: CVAT, Python, Mask2Former và Codex. Trong vòng hoàn thiện sau đó, công cụ hỗ trợ tạo gợi ý, bổ sung và sửa mask, rà ảnh và kiểm tra export; phần hỗ trợ này được phân biệt với phần tôi tự vẽ tay.
 - Tự kiểm: sau vòng hỗ trợ, tôi đã tự rà toàn bộ 14 ảnh, sửa các điểm cần điều chỉnh và kiểm chứng lại kết quả.
-- Nguồn mô hình gợi ý: [facebook/mask2former-swin-tiny-coco-panoptic](https://huggingface.co/facebook/mask2former-swin-tiny-coco-panoptic). Không dùng reference để tạo hoặc sửa mask; chưa có điểm tự đánh giá.
+- Nguồn mô hình gợi ý: [facebook/mask2former-swin-tiny-coco-panoptic](https://huggingface.co/facebook/mask2former-swin-tiny-coco-panoptic). Không dùng reference để tạo hoặc sửa mask. Đã dùng gói ground truth coach phát để chấm lần đầu ngày **12/11/2026**, sau khi lưu bản nhãn trên GitHub.
 
 ## 1. Bài đã nộp
 
@@ -47,7 +47,26 @@ Lỗi dưới đây được phát hiện và xử lý trong vòng hỗ trợ; s
 - **Bằng chứng:** biển xanh, biển trắng bên dưới và cột kim loại nhìn thấy rõ trên ảnh, nhưng chưa có mask đúng lớp trong bản gợi ý đầu.
 - **Sửa với hỗ trợ:** vẽ theo vùng nhìn thấy của biển/cột, tách phần này khỏi sky/road; gộp các phần cùng lớp thành vùng semantic. Không gán nhánh cây thành cột và không tô toàn bộ vùng nền quanh biển.
 - **Trạng thái:** đã lưu tại CVAT task 12/job 12 và export lại `cp3_thin.zip`. ZIP có đủ bốn lớp trong labelmap; giải mã mask khớp bản đã Save. Sau vòng sửa có hỗ trợ, tôi đã tự xem lại và kiểm chứng kết quả; các nhánh/cột nhỏ và biên quanh đèn tín hiệu là những vùng cần đối chiếu kỹ.
-- **Kết quả scorer:** chưa chạy scorer với reference, chưa có mIoU/PQ hoặc điểm. Không suy điểm từ việc checker báo OK.
+- **Kết quả scorer:** ngày **12/11/2026** đã chạy đối chiếu ground truth cho ba tier Easy, Medium và Hard. Gói `tiers_gt.zip` không có reference cho CP3 hoặc các checkpoint còn lại, nên chưa chấm sáu checkpoint. Không suy điểm từ việc checker báo OK.
+
+**Kết quả tự đánh giá lần đầu với ground truth:**
+
+| Task | Metric | Giá trị | Điểm tự đánh giá |
+| --- | --- | ---: | ---: |
+| Easy | mIoU | 0,720 | 14,2 / 20 |
+| Medium | mean matched IoU × recall@0.5 | 0,445 | 3,2 / 32 |
+| Hard | PQ | 0,303 | 6,9 / 30 |
+| **Tổng ba tier** | | | **24,3 / 82** |
+
+Kết quả gốc: [SCORECARD.md](../../reports/tiers/SCORECARD.md), [scorecard.json](../../reports/tiers/scorecard.json). Đây là phản hồi ba tier, không phải điểm chính thức /100 hoặc xác nhận PASS.
+
+Nhận xét từ chỉ số, cần đối chiếu ảnh khi rework:
+
+- **Easy:** IoU sidewalk **0,482**, vegetation **0,578** thấp hơn road **0,972**; ưu tiên rà ranh vỉa hè và vùng cây. [Chi tiết](../../reports/tiers/easy_semantic.json)
+- **Medium:** mean matched IoU **0,735**, recall khoảng **0,61**; TP **43**, FP **13**, FN **28**. Bản nộp có **56** instance, reference có **71**. Các số này cho thấy nhiều vật chưa ghép khớp; cần kiểm cả thiếu vật, sai class và biên, không kết luận mọi FN đều là vật chưa vẽ. [Chi tiết](../../reports/tiers/medium_instance.json)
+- **Hard:** PQ **0,303**, SQ **0,455**, RQ **0,387**. Person, motorcycle, sidewalk, truck và bicycle có PQ bằng 0; cần mở lại đúng ảnh để xác định lỗi class, biên hoặc số instance. [Chi tiết](../../reports/tiers/hard_panoptic.json)
+
+Lần chạy này chỉ chấm bộ ZIP đã lưu, chưa sửa nhãn theo reference và chưa có kết quả sau rework. Gói coach gửi có thư mục `tiers/` kèm ảnh/schema và metadata macOS; đã kiểm tám ảnh khớp dữ liệu bài, giữ nguyên byte của bảy file ground truth và chỉ chuẩn hóa đường dẫn thành `data/tiers/` để cài bằng script có sẵn. Không sửa scorer, schema bài hoặc nội dung ground truth.
 
 ![CP3: gợi ý ban đầu ở trên, sau sửa ở dưới](assets/day3/cp3_before_after.jpg)
 
